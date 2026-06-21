@@ -60,9 +60,6 @@ def create_file() -> None:
         else:
             dirs_path = "."
 
-        if not os.path.exists(dirs_path):
-            os.makedirs(dirs_path)
-
         if os.path.exists(os.path.join(str(dirs_path), file_name)):
             write_data(file_name, "a", str(dirs_path))
         else:
