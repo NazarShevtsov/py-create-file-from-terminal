@@ -49,14 +49,11 @@ def create_file() -> None:
         index_f = command.index("-f")
         index_d = command.index("-d")
 
-        print(index_f, index_d)
-
         if index_f < index_d:
             list_of_dirs = [dirs for dirs in command[index_d + 1::]]
         else:
             list_of_dirs = [dirs for dirs in command[2:index_f]]
 
-        print(list_of_dirs)
         if list_of_dirs:
             dirs_path = os.path.join(*list_of_dirs)
             os.makedirs(dirs_path)
